@@ -1,59 +1,66 @@
-## Panduan Instalasi Node.js Kafka
-Repository ini berisi stater kit untuk menggunakan Node.js dengan Apache Kafka dan Apache ZooKeeper. Panduan ini akan memberikan instruksi langkah demi langkah untuk menginstal dan menjalankan aplikasi ini.
-
-## Prasyarat
-Sebelum memulai instalasi, pastikan Anda telah memenuhi prasyarat berikut:
-
-> Node.js telah terinstal di sistem Anda. Anda dapat mengunduh versi terbaru dari https://nodejs.org.
-Kafka dan ZooKeeper telah terinstal dan dikonfigurasi dengan benar. Anda dapat mengikuti panduan instalasi resmi di https://kafka.apache.org untuk menginstal Kafka dan ZooKeeper.
-Langkah 1: Clone Repository
-Pertama, clone repositori nodejs-kafka-zookeeper-staterkits ke mesin Anda dengan menjalankan perintah berikut:
-
-shell
-Copy code
-`code` git clone https://github.com/nanangNSL/nodejs-kafka-zookeeper-staterkits.git
-Setelah itu, pindah ke direktori proyek:
-
-shell
-Copy code
-`code` cd nodejs-kafka-zookeeper-staterkits
-Langkah 2: Instalasi Dependensi
-Selanjutnya, instal dependensi proyek dengan menjalankan perintah berikut:
-
-shell
-Copy code
-`code` npm install
-Ini akan mengunduh dan menginstal semua dependensi yang diperlukan untuk proyek ini.
-
-Langkah 3: Konfigurasi
-Pada langkah ini, Anda perlu mengkonfigurasi koneksi Kafka dan ZooKeeper. Buka file config.js di direktori proyek dan perbarui konfigurasi sesuai dengan konfigurasi Kafka dan ZooKeeper yang ada di sistem Anda.
-
-javascript
-Copy code
-`code` module.exports = {
-  kafka: {
-    // Konfigurasi Kafka
-    kafkaHost: 'localhost:9092', // Ganti dengan alamat dan port Kafka Anda
-    topic: 'test-topic' // Ganti dengan topik Kafka yang ingin Anda gunakan
-  },
-  zookeeper: {
-    // Konfigurasi ZooKeeper
-    connectionString: 'localhost:2181' // Ganti dengan alamat dan port ZooKeeper Anda
-  }
-};
-Pastikan untuk memperbarui kafkaHost, topic, dan connectionString sesuai dengan konfigurasi Kafka dan ZooKeeper di sistem Anda.
-
-Langkah 4: Menjalankan Aplikasi
-Setelah mengkonfigurasi proyek, Anda dapat menjalankan aplikasi Kafka dengan menjalankan perintah berikut:
-
-shell
-Copy code
-`code` node producer.js
-Ini akan memulai produser Kafka yang akan mengirimkan pesan ke topik yang ditentukan.
-
-Untuk menjalankan konsumen Kafka, buka terminal baru dan jalankan perintah berikut:
-
-shell
-Copy code
-`code` node consumer.js
-Ini akan memulai konsumen Kafka yang akan menerima pesan dari topik yang ditentukan.
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Panduan Instalasi Node.js dengan Kafka dan ZooKeeper</h1>
+  <h2>Persyaratan</h2>
+  <p>
+    Sebelum memulai instalasi, pastikan Anda telah memenuhi persyaratan berikut:
+  </p>
+  <ul>
+    <li>Node.js - Versi 10 atau yang lebih baru</li>
+    <li>Kafka - Versi 2.0.0 atau yang lebih baru</li>
+    <li>ZooKeeper - Versi 3.4.0 atau yang lebih baru</li>
+  </ul>
+  <h2>Langkah-langkah Instalasi</h2>
+  <h3>1. Instalasi Node.js</h3>
+  <p>
+    Langkah pertama adalah menginstal Node.js. Berikut adalah instruksi instalasi untuk sistem operasi yang berbeda:
+  </p>
+  <ul>
+    <li>Windows: <code>https://nodejs.org/en/download/</code></li>
+    <li>Linux: Jalankan perintah berikut di terminal: <code>sudo apt-get install nodejs</code></li>
+    <li>Mac: <code>brew install node</code></li>
+  </ul>
+  <h3>2. Instalasi Kafka</h3>
+  <p>
+    Setelah menginstal Node.js, langkah selanjutnya adalah menginstal Kafka. Berikut adalah instruksi instalasi untuk sistem operasi yang berbeda:
+  </p>
+  <ul>
+    <li>Windows:
+      <ol>
+        <li>Unduh Kafka dari situs resmi: <code>https://kafka.apache.org/downloads</code></li>
+        <li>Ekstrak file yang telah diunduh.</li>
+        <li>Atur variabel lingkungan <code>KAFKA_HOME</code> untuk menunjuk ke direktori Kafka yang diekstrak.</li>
+        <li>Ikuti instruksi resmi Kafka untuk memulai ZooKeeper dan server Kafka.</li>
+      </ol>
+    </li>
+    <li>Linux:
+      <ol>
+        <li>Jalankan perintah berikut di terminal: <code>sudo apt-get install kafka</code></li>
+        <li>Ikuti instruksi resmi Kafka untuk memulai ZooKeeper dan server Kafka.</li>
+      </ol>
+    </li>
+    <li>Mac: Jalankan perintah berikut di terminal: <code>brew install kafka</code></li>
+  </ul>
+  <h3>3. Instalasi ZooKeeper</h3>
+  <p>
+    Terakhir, instalasi ZooKeeper diperlukan untuk menjalankan Kafka. Berikut adalah instruksi instalasi untuk sistem operasi yang berbeda:
+  </p>
+  <ul>
+    <li>Windows:
+      <ol>
+        <li>Unduh ZooKeeper dari situs resmi: <code>https://zookeeper.apache.org/releases.html</code></li>
+        <li>Ekstrak file yang telah diunduh.</li>
+        <li>Atur variabel lingkungan <code>ZOOKEEPER_HOME</code> untuk menunjuk ke direktori ZooKeeper yang diekstrak.</li>
+        <li>Ikuti instruksi resmi ZooKeeper untuk memulai ZooKeeper server.</li>
+      </ol>
+    </li>
+    <li>Linux: Jalankan perintah berikut di terminal: <code>sudo apt-get install zookeeper</code></li>
+    <li>Mac: Jalankan perintah berikut di terminal: <code>brew install zookeeper</code></li>
+  </ul>
+  <h2>Selesai</h2>
+  <p>
+    Setelah mengikuti langkah-langkah di atas, Anda sekarang harus memiliki Node.js, Kafka, dan ZooKeeper terinstal dengan baik di sistem Anda.
+  </p>
+</body>
+</html>
